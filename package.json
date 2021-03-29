@@ -1,7 +1,7 @@
 {
-  "name": "my-ts-lib",
+  "name": "rollup-plugin-deno",
   "version": "0.0.0",
-  "description": "My awesome typescript library",
+  "description": "Create a bundle for Deno runtime",
   "publishConfig": {
     "access": "public"
   },
