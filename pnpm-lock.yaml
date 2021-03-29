@@ -4,6 +4,7 @@ devDependencies:
   '@types/jest': 26.0.20
   jest: 26.6.3
   prettier: 2.2.1
+  rollup: 2.44.0
   tsup: 4.8.4_typescript@4.2.3
   typescript: 4.2.3
 lockfileVersion: 5.2
@@ -3468,6 +3469,15 @@ packages:
       fsevents: 2.3.2
     resolution:
       integrity: sha512-f9IHfMO8p2Y8OdisI7Oj3oKkPuaQ6cgSwYqAi0TDvP3w2p+oX1VejX/w28a1h8WTnrapzfO5d4Uqhww+gL0b0g==
+  /rollup/2.44.0:
+    dev: true
+    engines:
+      node: '>=10.0.0'
+    hasBin: true
+    optionalDependencies:
+      fsevents: 2.3.2
+    resolution:
+      integrity: sha512-rGSF4pLwvuaH/x4nAS+zP6UNn5YUDWf/TeEU5IoXSZKBbKRNTCI3qMnYXKZgrC0D2KzS2baiOZt1OlqhMu5rnQ==
   /rsvp/4.8.5:
     dev: true
     engines:
@@ -4281,5 +4291,6 @@ specifiers:
   '@types/jest': ^26.0.20
   jest: ^26.6.3
   prettier: ^2.2.1
+  rollup: ^2.44.0
   tsup: ^4.8.4
   typescript: ^4.2.3

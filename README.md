@@ -2,16 +2,34 @@
 
 ---
 
-# ts-lib-starter
+# rollup-plugin-deno
 
-[![npm version](https://badgen.net/npm/v/express)](https://npm.im/express)
+[![npm version](https://badgen.net/npm/v/rollup-plugin-deno)](https://npm.im/rollup-plugin-deno)
 
+This plugin uses [Deno's Node.js compatibility layer](https://deno.land/std@0.90.0/node/README.md), not all built-in Node.js modules are supported.
 
 ## Install
 
 ```bash
-npm i my-ts-lib
+npm i rollup-plugin-deno -D
 ```
+
+## Usage
+
+```js
+import deno from 'rollup-plugin-deno'
+
+export default {
+  input: './index.ts',
+  output: {
+    format: 'esm',
+    file: 'mod.js',
+  },
+  plugins: [deno()],
+}
+```
+
+It's also recommended to use [rollup-plugin-dts](https://github.com/Swatinem/rollup-plugin-dts) to bundle your TypeScript declaration file.
 
 ## License
 
