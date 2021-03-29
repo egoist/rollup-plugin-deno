@@ -46,3 +46,23 @@ test('node to deno', async () => {
     "
   `)
 })
+
+test('timer', async () => {
+  const output = await build(`setImmediate(() => {})`)
+  expect(output).toMatchInlineSnapshot(`
+    "import _node_timers from \\"https://deno.land/std@0.90.0/node/timers.ts\\";
+      !globalThis.setImmediate && Object.defineProperty(globalThis, \\"setImmediate\\", {
+        value: _node_timers.setImmediate,
+        enumerable: true,
+        writable: true,
+        configurable: true,
+      });
+      !globalThis.clearImmediate && Object.defineProperty(globalThis, \\"clearImmediate\\", {
+        value: _node_timers.clearImmediate,
+        enumerable: true,
+        writable: true,
+        configurable: true,
+      });setImmediate(() => {});
+    "
+  `)
+})

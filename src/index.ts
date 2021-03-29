@@ -46,15 +46,15 @@ const injectGlobalShimForDenoBuild = (code: string) => {
 
   if (setImmediateRe.test(code)) {
     code =
-      `!globalThis.setImmediate && Object.defineProperty(globalThis, "setImmediate", {
-    value: timers.setImmediate,
+      `import _node_timers from "${getPolyfillPath('timers')}";
+  !globalThis.setImmediate && Object.defineProperty(globalThis, "setImmediate", {
+    value: _node_timers.setImmediate,
     enumerable: true,
     writable: true,
     configurable: true,
   });
-  
   !globalThis.clearImmediate && Object.defineProperty(globalThis, "clearImmediate", {
-    value: timers.clearImmediate,
+    value: _node_timers.clearImmediate,
     enumerable: true,
     writable: true,
     configurable: true,
